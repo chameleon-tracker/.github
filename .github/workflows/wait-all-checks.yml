@@ -1,0 +1,15 @@
+name: Wait all checks
+
+on:
+  workflow_call:
+
+jobs:
+  wait-all-checks:
+    runs-on: ubuntu-latest
+    permissions:
+      checks: read
+    steps:
+      - name: Wait all GitHub checks
+        uses: poseidon/wait-for-status-checks@v0.3.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
