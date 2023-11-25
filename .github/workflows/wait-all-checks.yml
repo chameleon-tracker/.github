@@ -13,3 +13,4 @@ jobs:
         uses: poseidon/wait-for-status-checks@v0.3.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          ignore: "wait-all-checks / wait-all-checks"
