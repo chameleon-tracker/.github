@@ -3,7 +3,7 @@
   "extends": [
     "config:base"
   ],
-  "commitMessageExtra": "from {{{currentValue}}} to {{{newValue}}}{{#if isMajor}} (major v{{{newMajor}}}){{else}}{{/if}}",
+  "commitMessageExtra": "from {{{currentValue}}} to `{{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{prettyNewMajor}}{{else}}{{#if isSingleVersion}}{{prettyNewVersion}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}}`",
   "separateMajorMinor": true,
   "separateMultipleMajor": true,
   "separateMinorPatch": true
